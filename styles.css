@@ -175,13 +175,13 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
 }
-.badge-frame { width: min(300px, 100%); height: auto; border-radius: 50%; }
+.badge-frame { width: min(420px, 100%); height: auto; border-radius: 50%; }
 
 .hero-rule {
   width: 200px;
   height: 4px;
   background: var(--pine);
-  margin: 2.1rem 0 1.5rem;
+  margin: 3rem 0 2.2rem;
 }
 
 .hero-tagline {
@@ -190,29 +190,23 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
-.hero-copy { margin-top: 1.6rem; display: flex; flex-direction: column; align-items: center; }
+.hero-copy { margin-top: 2.6rem; display: flex; flex-direction: column; align-items: center; }
 .hero-copy p {
   font-size: 1.08rem;
   color: var(--ink-soft);
   max-width: 46ch;
   margin: 0 0 2.1rem;
 }
-.hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; }
-
-.hero-note {
-  display: flex;
-  gap: 2.4rem;
-  margin-top: 3rem;
-  padding-top: 1.8rem;
-  border-top: 1px solid var(--line);
-}
-.hero-note div { font-size: 0.85rem; color: var(--ink-soft); }
-.hero-note strong {
-  display: block;
-  font-family: var(--display);
-  font-size: 1.5rem;
+.hero-actions { display: flex; gap: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.hero-actions .btn {
+  background: var(--cream);
   color: var(--pine);
-  font-weight: 600;
+  border-color: var(--pine);
+}
+.hero-actions .btn:hover {
+  background: var(--pine);
+  color: var(--cream);
+  border-color: var(--pine);
 }
 
 /* ---------- Section shell ---------- */
@@ -742,7 +736,7 @@ textarea { resize: vertical; min-height: 110px; }
   .nav-cta-mobile { display: inline-flex; margin-top: 0.4rem; }
   .nav-cta-desktop { display: none; }
   .nav-toggle { display: block; }
-  .badge-frame { width: min(220px, 100%); }
+  .badge-frame { width: min(280px, 100%); }
   .hero-tagline { white-space: normal; max-width: 34ch; }
   .about .wrap { grid-template-columns: 1fr; }
   .process-list { grid-template-columns: repeat(2, 1fr); }
@@ -772,7 +766,6 @@ textarea { resize: vertical; min-height: 110px; }
   .process-list { grid-template-columns: 1fr; }
   .process-item { border-left: none; border-top: 1px solid var(--line); }
   .process-item:first-child { border-top: none; }
-  .hero-note { flex-wrap: wrap; gap: 1.4rem; }
   .footer-top { flex-direction: column; }
   .footer-cols { gap: 2.4rem; }
 }

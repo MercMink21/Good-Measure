@@ -89,6 +89,22 @@
     margin: 2.4rem auto 0;
   }
 
+  .client-info { border-top: 1px solid var(--pine); padding: 2rem 0; margin-top: 2.4rem; }
+  .client-info h2 { font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.3rem; }
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
+  .field-grid .field.full { grid-column: 1 / -1; }
+  .field label {
+    display: block;
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+  }
+  .field .line { border-bottom: 1px solid var(--ink); height: 1.5rem; }
+
   section.block { border-top: 1px solid var(--line); padding: 2.4rem 0; }
   section.block:last-of-type { border-bottom: 1px solid var(--line); }
   .block-row { display: grid; grid-template-columns: 64px 1fr; gap: 1.4rem; align-items: start; }
@@ -119,10 +135,20 @@
     color: var(--ink-soft);
     margin-top: 0.2rem;
   }
+  ul.checks li .write-line {
+    display: block;
+    border-bottom: 1px solid var(--line);
+    height: 1.7rem;
+    margin-top: 0.35rem;
+  }
 
   .closer { padding-top: 2.6rem; }
   .closer h2 { font-size: 1.15rem; margin-bottom: 0.6rem; }
   .closer p { color: var(--ink-soft); font-size: 0.97rem; margin: 0; max-width: 62ch; }
+
+  .notes { border-top: 1px solid var(--pine); padding: 2rem 0 0.5rem; margin-top: 2.6rem; }
+  .notes h2 { font-size: 1.15rem; margin-bottom: 1.3rem; }
+  .notes-line { border-bottom: 1px solid var(--line); height: 2.1rem; }
 
   footer.doc-footer {
     margin-top: 3.2rem;
@@ -136,6 +162,7 @@
   @media (max-width: 560px) {
     .block-row { grid-template-columns: 40px 1fr; gap: 1rem; }
     .block-num { font-size: 1.2rem; }
+    .field-grid { grid-template-columns: 1fr; }
   }
 
   @media print {
@@ -147,6 +174,9 @@
     .block-row { break-inside: avoid; }
     ul.checks li { break-inside: avoid; }
     .closer { break-inside: avoid; }
+    .client-info { break-inside: avoid; }
+    .notes { break-inside: avoid-page; }
+    .field { break-inside: avoid; }
   }
 </style>
 
@@ -160,19 +190,31 @@
 
   <p class="opener">"Thanks for reaching out — before we talk pricing, I want to make sure I understand your night. Mind if I ask a few questions?"</p>
 
+  <div class="client-info">
+    <h2>Client Info</h2>
+    <div class="field-grid">
+      <div class="field"><label>Name</label><div class="line"></div></div>
+      <div class="field"><label>Phone</label><div class="line"></div></div>
+      <div class="field"><label>Email</label><div class="line"></div></div>
+      <div class="field"><label>Call Date</label><div class="line"></div></div>
+      <div class="field"><label>Event Date</label><div class="line"></div></div>
+      <div class="field"><label>Package Interested In</label><div class="line"></div></div>
+    </div>
+  </div>
+
   <section class="block">
     <div class="block-row">
       <span class="block-num">01</span>
       <div>
         <h2>The Basics</h2>
         <ul class="checks">
-          <li><div class="item-body">Full name, phone, and best way to reach them<span class="why">Should already be on the inquiry form — confirm it's current.</span></div></li>
-          <li>Event date, and a backup/rain date if it's outdoors</li>
-          <li>Start time and how many hours of bar service</li>
-          <li>Venue — home, rental space, park, backyard, etc., and the address</li>
-          <li>Indoor or outdoor, and the weather backup plan if outdoor</li>
-          <li><div class="item-body">Final guest count<span class="why">Not the invite list — how many people are actually confirmed. This is what the quote is built on.</span></div></li>
-          <li>Which package fits — Intimate Gathering (15 or fewer) or Small Parties</li>
+          <li><div class="item-body">Full name, phone, and best way to reach them<span class="why">Should already be on the inquiry form — confirm it's current.</span><span class="write-line"></span></div></li>
+          <li><div class="item-body">Event date, and a backup/rain date if it's outdoors<span class="write-line"></span></div></li>
+          <li><div class="item-body">Start time and how many hours of bar service<span class="write-line"></span></div></li>
+          <li><div class="item-body">Venue — home, rental space, park, backyard, etc., and the address<span class="write-line"></span></div></li>
+          <li><div class="item-body">Indoor or outdoor, and the weather backup plan if outdoor<span class="write-line"></span></div></li>
+          <li><div class="item-body">Final guest count<span class="why">Not the invite list — how many people are actually confirmed. This is what the quote is built on.</span><span class="write-line"></span></div></li>
+          <li><div class="item-body">Which package fits — Intimate Gathering (15 or fewer) or Small Parties<span class="write-line"></span></div></li>
         </ul>
       </div>
     </div>
@@ -184,12 +226,12 @@
       <div>
         <h2>The Drink</h2>
         <ul class="checks">
-          <li><div class="item-body">What alcohol are they providing? Ask for types, not just "some liquor" — spirits, wine, beer, brands if they know<span class="why">You're BYOB — this determines what's actually possible to make.</span></div></li>
-          <li>Flavor profile: sweet, bitter, citrusy, boozy-forward, light and easy?</li>
-          <li>Anything they specifically dislike (won't drink gin, hates anything too sweet, etc.)</li>
-          <li>Is there a drink they want recreated — a favorite from a bar, a wedding cocktail, a family recipe?</li>
-          <li><div class="item-body">How many guests are sober / zero-proof?<span class="why">Determines whether they need one N/A option or a full mocktail menu.</span></div></li>
-          <li>Any allergies or dietary notes (nuts, dairy, specific spirits)</li>
+          <li><div class="item-body">What alcohol are they providing? Ask for types, not just "some liquor" — spirits, wine, beer, brands if they know<span class="why">You're BYOB — this determines what's actually possible to make.</span><span class="write-line"></span></div></li>
+          <li><div class="item-body">Flavor profile: sweet, bitter, citrusy, boozy-forward, light and easy?<span class="write-line"></span></div></li>
+          <li><div class="item-body">Anything they specifically dislike (won't drink gin, hates anything too sweet, etc.)<span class="write-line"></span></div></li>
+          <li><div class="item-body">Is there a drink they want recreated — a favorite from a bar, a wedding cocktail, a family recipe?<span class="write-line"></span></div></li>
+          <li><div class="item-body">How many guests are sober / zero-proof?<span class="why">Determines whether they need one N/A option or a full mocktail menu.</span><span class="write-line"></span></div></li>
+          <li><div class="item-body">Any allergies or dietary notes (nuts, dairy, specific spirits)<span class="write-line"></span></div></li>
         </ul>
       </div>
     </div>
@@ -201,12 +243,12 @@
       <div>
         <h2>Venue &amp; Logistics</h2>
         <ul class="checks">
-          <li>Where will the bar actually be set up — counter, table, outdoor cart?</li>
-          <li><div class="item-body">Glassware: do they have enough for the guest count and drink type?<span class="why">Client provides glassware — this is the single most common gap to catch before event day, not during it.</span></div></li>
-          <li>Power outlet nearby if you'll need one</li>
-          <li>Parking and load-in access for setup</li>
-          <li>Ice — do they have a source, or are you sourcing/bringing it?</li>
-          <li>Trash/recycling plan for the night</li>
+          <li><div class="item-body">Where will the bar actually be set up — counter, table, outdoor cart?<span class="write-line"></span></div></li>
+          <li><div class="item-body">Glassware: do they have enough for the guest count and drink type?<span class="why">Client provides glassware — this is the single most common gap to catch before event day, not during it.</span><span class="write-line"></span></div></li>
+          <li><div class="item-body">Power outlet nearby if you'll need one<span class="write-line"></span></div></li>
+          <li><div class="item-body">Parking and load-in access for setup<span class="write-line"></span></div></li>
+          <li><div class="item-body">Ice — do they have a source, or are you sourcing/bringing it?<span class="write-line"></span></div></li>
+          <li><div class="item-body">Trash/recycling plan for the night<span class="write-line"></span></div></li>
         </ul>
       </div>
     </div>
@@ -218,8 +260,8 @@
       <div>
         <h2>Add-Ons</h2>
         <ul class="checks">
-          <li>Interested in custom event signage? (from $20)</li>
-          <li>Any other special touches — a named drink for the guest of honor, a welcome tray, extra garnish requests</li>
+          <li><div class="item-body">Interested in custom event signage? (from $20)<span class="write-line"></span></div></li>
+          <li><div class="item-body">Any other special touches — a named drink for the guest of honor, a welcome tray, extra garnish requests<span class="write-line"></span></div></li>
         </ul>
       </div>
     </div>
@@ -231,10 +273,10 @@
       <div>
         <h2>Budget &amp; Next Steps</h2>
         <ul class="checks">
-          <li>Any budget range they've mentioned, or ask directly if it hasn't come up</li>
-          <li>Walk through what's included vs. what's an add-on, in plain terms</li>
-          <li>Tell them when they'll receive the written quote</li>
-          <li>Explain deposit/booking process and when the date is actually locked</li>
+          <li><div class="item-body">Any budget range they've mentioned, or ask directly if it hasn't come up<span class="write-line"></span></div></li>
+          <li><div class="item-body">Walk through what's included vs. what's an add-on, in plain terms<span class="write-line"></span></div></li>
+          <li><div class="item-body">Tell them when they'll receive the written quote<span class="write-line"></span></div></li>
+          <li><div class="item-body">Explain deposit/booking process and when the date is actually locked<span class="write-line"></span></div></li>
         </ul>
       </div>
     </div>
@@ -243,6 +285,16 @@
   <div class="closer">
     <h2>Before you hang up</h2>
     <p>Recap the event back to them in one or two sentences — date, guest count, the drink direction — so any mismatch surfaces now, not on quote day. Confirm exactly when they'll hear from you next, and point them to @goodmeasurebar on Instagram if they want to see past events while they wait.</p>
+  </div>
+
+  <div class="notes">
+    <h2>Additional Notes</h2>
+    <div class="notes-line"></div>
+    <div class="notes-line"></div>
+    <div class="notes-line"></div>
+    <div class="notes-line"></div>
+    <div class="notes-line"></div>
+    <div class="notes-line"></div>
   </div>
 
   <footer class="doc-footer">

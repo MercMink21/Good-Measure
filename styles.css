@@ -373,7 +373,7 @@ section { padding: var(--gap-section) 0; }
 /* ---------- Packages: rate card, not pricing-tier cards ---------- */
 .packages-table {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid var(--pine);
 }
 .package-col {
@@ -433,6 +433,17 @@ section { padding: var(--gap-section) 0; }
   color: var(--ink-soft);
   text-align: center;
 }
+
+.package-included {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.package-included h3 { font-size: 1rem; margin-bottom: 0.6rem; }
+.package-included p { color: var(--ink-soft); font-size: 0.94rem; margin: 0; }
 
 /* ---------- Gallery ---------- */
 .gallery-grid {
@@ -701,6 +712,7 @@ textarea { resize: vertical; min-height: 110px; }
   .package-col { border-left: none; border-top: 1px solid var(--line); }
   .package-col:first-child { border-top: none; }
   .package-col.featured { border-top: 2px solid var(--crimson); }
+  .package-included { grid-template-columns: 1fr; gap: 1.2rem; }
   .testimonial-grid { grid-template-columns: 1fr; border-top: 1px solid var(--pine); }
   .testimonial { border-left: none; border-top: 1px solid var(--line); padding-top: 2rem; }
   .testimonial:first-child { border-top: none; }

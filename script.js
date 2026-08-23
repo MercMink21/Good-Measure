@@ -32,12 +32,31 @@ if ('IntersectionObserver' in window && revealEls.length) {
   revealEls.forEach(el => el.classList.add('is-visible'));
 }
 
+// Match the hero rule's width to the rendered tagline text below it
+const heroRule = document.querySelector('.hero-rule');
+const heroTagline = document.querySelector('.hero-tagline');
+if (heroRule && heroTagline) {
+  const syncRuleWidth = () => {
+    heroRule.style.width = heroTagline.offsetWidth + 'px';
+  };
+  syncRuleWidth();
+  window.addEventListener('resize', syncRuleWidth);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncRuleWidth);
+  }
+}
+
 // Inquiry form (demo — replace action with real endpoint, e.g. Formspree)
 const form = document.getElementById('inquiryForm');
 const status = document.getElementById('formStatus');
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    // Honeypot: real visitors never fill this hidden field, bots often do
+    const honeypot = form.querySelector('#website');
+    if (honeypot && honeypot.value) {
+      return;
+    }
     status.textContent = 'Thanks — this is a demo form. Connect it to Formspree/Resend/your inbox to go live.';
   });
 }

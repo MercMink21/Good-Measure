@@ -63,9 +63,9 @@ a { color: inherit; }
   font-family: var(--display);
   font-style: italic;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: var(--crimson);
 }
 
@@ -178,14 +178,14 @@ a { color: inherit; }
 .badge-frame { width: min(300px, 100%); height: auto; border-radius: 50%; }
 
 .hero-rule {
-  width: 100px;
+  width: 200px;
   height: 4px;
   background: var(--pine);
   margin: 2.1rem 0 1.5rem;
 }
 
 .hero-tagline {
-  display: block;
+  display: inline-block;
   font-size: clamp(1.15rem, 2.8vw, 1.55rem);
   white-space: nowrap;
 }
@@ -534,6 +534,15 @@ section { padding: var(--gap-section) 0; }
 }
 .social-item:first-child { border-left: none; }
 .social-item:hover { background: var(--pink-soft); }
+.social-list-single {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.social-list-single .social-item {
+  align-items: center;
+  text-align: center;
+  padding: 2rem 3rem;
+}
 .social-platform {
   font-family: var(--display);
   font-size: 1.3rem;
@@ -644,6 +653,16 @@ textarea { resize: vertical; min-height: 110px; }
   font-weight: 600;
   color: var(--pine);
   min-height: 1.2em;
+}
+
+/* Honeypot spam-trap field — hidden from sighted users and screen readers, left open for bots */
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 /* ---------- Footer ---------- */

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Good Measure — Private Bartending</title>
 <meta name="description" content="Good Measure is a private bartending service for small parties and intimate events — elevated craft cocktails and mocktails, measured just right." />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -44,7 +45,6 @@
       <div class="hero-rule reveal"></div>
       <span class="eyebrow hero-tagline reveal">Private Bartending &amp; Craft Cocktail Service</span>
       <div class="hero-copy reveal">
-        <p>Good Measure brings elevated cocktails and thoughtful mocktails to small parties and intimate events — a full bar experience, scaled to a room where every guest actually knows the host.</p>
         <div class="hero-actions">
           <a href="#inquiry" class="btn btn-primary">Check Your Date</a>
           <a href="#menu" class="btn btn-ghost">View Sample Menu</a>
@@ -57,14 +57,30 @@
     </div>
   </section>
 
+  <!-- ============ SOCIAL ============ -->
+  <section id="social">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Find Us on Social</span>
+        <h2>Follow along between events.</h2>
+        <p>Menu drops, event recaps, and the occasional garnish tutorial.</p>
+      </div>
+      <div class="social-list social-list-single reveal">
+        <a class="social-item" href="https://instagram.com/goodmeasurebar" target="_blank" rel="noopener noreferrer">
+          <span class="social-platform">Instagram</span>
+          <span class="social-handle">@goodmeasurebar</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ ABOUT ============ -->
   <section class="about" id="about">
     <div class="wrap">
       <p class="about-lede reveal">"Good measure" isn't just a pour — it's a way of hosting. Generous, precise, and never an afterthought.</p>
       <div class="about-body reveal">
-        <p>We started Good Measure because the best parties we'd ever bartended weren't the biggest ones — they were the small dinners, backyard engagements, and twelve-person birthdays where the host actually got to enjoy their own night instead of restocking ice.</p>
+        <p>Good Measure was started because the best parties we'd ever bartended weren't the biggest ones — they were the small dinners, backyard engagements, and twelve-person birthdays where the host actually got to enjoy their own night instead of restocking ice.</p>
         <p>Every event starts with a conversation, not a package. You supply the alcohol and glassware; we build a short, considered menu and bring everything else — plus a full zero-proof menu for anyone (or everyone) skipping the alcohol. Then we show up early, set up the bar, and stay until the last glass is poured.</p>
-        <p>No flair, no shouting over the crowd. Just craft cocktails, careful hospitality, and good measure in every sense.</p>
       </div>
     </div>
   </section>
@@ -83,8 +99,8 @@
           <span class="service-num">01</span>
           <div class="service-body">
             <h3>Intimate Gathering</h3>
-            <p>Built for dinner parties and small get-togethers — one signature drink of your choice, made all night.</p>
-            <p class="service-tags"><span>15 guests or fewer</span><span>1 signature drink</span><span>Full setup &amp; clean-up</span></p>
+            <p>Built for dinner parties and small get-togethers — a custom drink, designed with you and made perfectly, all night long.</p>
+            <p class="service-tags"><span>15 guests or fewer</span><span>Custom signature drink</span><span>Full setup &amp; clean-up</span></p>
           </div>
         </div>
         <div class="service-row reveal">
@@ -217,7 +233,7 @@
           <p class="package-desc">Built for dinner parties and small get-togethers.</p>
           <div class="package-price">Custom Quote</div>
           <ul>
-            <li>1 signature drink of your choice</li>
+            <li>A custom signature drink, designed with you</li>
             <li>Full setup &amp; clean-up</li>
             <li>You bring the alcohol — we bring everything else</li>
           </ul>
@@ -264,31 +280,6 @@
         <div class="gallery-tile">backyard birthday</div>
         <div class="gallery-tile">pour, close-up</div>
         <div class="gallery-tile">supper club, table-side</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SOCIAL ============ -->
-  <section id="social">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Find Us on Social</span>
-        <h2>Follow along between events.</h2>
-        <p>Menu drops, event recaps, and the occasional garnish tutorial.</p>
-      </div>
-      <div class="social-list reveal">
-        <a class="social-item" href="https://instagram.com/goodmeasurebar" target="_blank" rel="noopener">
-          <span class="social-platform">Instagram</span>
-          <span class="social-handle">@goodmeasurebar</span>
-        </a>
-        <a class="social-item" href="#" target="_blank" rel="noopener">
-          <span class="social-platform">TikTok</span>
-          <span class="social-handle">Handle TBD</span>
-        </a>
-        <a class="social-item" href="#" target="_blank" rel="noopener">
-          <span class="social-platform">Facebook</span>
-          <span class="social-handle">Handle TBD</span>
-        </a>
       </div>
     </div>
   </section>
@@ -347,7 +338,7 @@
         </details>
         <details class="faq-item">
           <summary>What's your service area?</summary>
-          <p>Within 30 miles of Colorado Springs, CO (80920). Travel fees may apply beyond that.</p>
+          <p>Within 30 miles of Colorado Springs, CO. Travel fees may apply beyond that.</p>
         </details>
       </div>
     </div>
@@ -366,7 +357,7 @@
         </div>
         <div class="contact-detail">
           <span class="label">Instagram</span>
-          <a href="https://instagram.com/goodmeasurebar" target="_blank" rel="noopener">@goodmeasurebar</a>
+          <a href="https://instagram.com/goodmeasurebar" target="_blank" rel="noopener noreferrer">@goodmeasurebar</a>
         </div>
         <div class="contact-detail">
           <span class="label">Service Area</span>
@@ -404,6 +395,7 @@
           <textarea id="message" name="message" placeholder="Vibe, favorite spirits, dietary notes, anything else worth knowing."></textarea>
         </div>
         <div class="form-note">This form is a front-end demo — wire it to Formspree, Resend, or your inbox of choice before launch.</div>
+        <input type="text" name="website" id="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit" class="btn btn-primary full" style="justify-content:center;">Send Inquiry</button>
         <div class="form-status full" id="formStatus"></div>
       </form>

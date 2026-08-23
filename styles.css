@@ -178,15 +178,15 @@ a { color: inherit; }
 .badge-frame { width: min(300px, 100%); height: auto; border-radius: 50%; }
 
 .hero-rule {
-  width: 64px;
-  height: 3px;
+  width: 100px;
+  height: 4px;
   background: var(--pine);
-  margin: 1.8rem 0 1.3rem;
+  margin: 2.1rem 0 1.5rem;
 }
 
 .hero-tagline {
   display: block;
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-size: clamp(1.15rem, 2.8vw, 1.55rem);
   white-space: nowrap;
 }
 

@@ -1,24 +1,31 @@
 /* ============================================
    GOOD MEASURE — Private Bartending
-   Design tokens derived from logo:
-   blush pink ground / crimson line art / deep pine wordmark
+   Design tokens: muted sage/olive palette —
+   Axolotl, Morning Blue, Jet Stream, Dark Vanilla, Opal.
    Editorial print-menu language: rules over cards,
    label-style buttons over pills, a plain masthead over app chrome.
    ============================================ */
 
 :root {
-  /* Pixel-sampled from the source logo (goodmeasure.png) */
-  --cream:        #FBF3EC;
-  --cream-deep:   #F4E4D8;
-  --pink:         #EFC9C8;
-  --pink-soft:    #F5DCDB;
-  --crimson:      #E51A3C;
-  --crimson-dark: #B3142F;
-  --pine:         #1C512F;
-  --pine-dark:    #12351F;
-  --ink:          #241512;
-  --ink-soft:     #5B4A45;
-  --line:         rgba(36, 21, 18, 0.16);
+  /* Client-supplied palette (Axolotl / Morning Blue / Jet Stream / Dark Vanilla / Opal) */
+  --cream:        #D7CBB2; /* Dark Vanilla — main surface */
+  --cream-deep:   #BED2BA; /* Jet Stream — alternating section surface */
+  --pink:         #AAC4BC; /* Opal — soft wash / gallery / badge accent */
+  --pink-soft:    #D6E4DF; /* Opal, lightened — hero glow */
+  --crimson:      #6E8B77; /* Morning Blue, darkened for legible small text/accents */
+  --crimson-dark: #57705F; /* Morning Blue, darkened further — hover states */
+  --pine:         #6A7A5A; /* Axolotl — headings, CTA fill, dark surfaces */
+  --pine-dark:    #4A5540; /* Axolotl, darkened — hover states, deep surfaces */
+
+  /* Derived neutrals — none of the 5 palette colors are dark/light enough
+     alone to keep body text and on-dark labels comfortably legible, so
+     ink/ink-soft are darkened-Axolotl and paper is a near-white constant,
+     the same role --cream played before this palette swap. */
+  --ink:          #2E3527;
+  --ink-soft:     #525A44;
+  --paper:        #FBF3EC;
+  --paper-rgb:    251, 243, 236;
+  --line:         rgba(46, 53, 39, 0.16);
 
   --display: "Playfair Display", "Iowan Old Style", "Palatino Linotype", serif;
   --body:    "Work Sans", "Helvetica Neue", Arial, sans-serif;
@@ -93,7 +100,7 @@ a { color: inherit; }
 .btn-primary {
   background: var(--pine);
   border-color: var(--pine);
-  color: var(--cream);
+  color: var(--paper);
 }
 .btn-primary:hover { background: var(--pine-dark); border-color: var(--pine-dark); }
 
@@ -102,7 +109,7 @@ a { color: inherit; }
   color: var(--pine);
   border-color: var(--pine);
 }
-.btn-ghost:hover { background: var(--pine); color: var(--cream); }
+.btn-ghost:hover { background: var(--pine); color: var(--paper); }
 
 /* ---------- Header: plain masthead, not sticky app chrome ---------- */
 .site-header {
@@ -140,7 +147,7 @@ a { color: inherit; }
 }
 .main-nav .nav-links > a:hover { color: var(--crimson); }
 .main-nav a.btn-primary,
-.main-nav a.btn-primary:hover { color: var(--cream); }
+.main-nav a.btn-primary:hover { color: var(--paper); }
 .nav-links { display: flex; align-items: center; gap: 2.2rem; }
 
 .nav-toggle {
@@ -327,7 +334,7 @@ section { padding: var(--gap-section) 0; }
 /* ---------- Menu (literal menu-card object — intentional exception) ---------- */
 .menu-card {
   background: var(--pine);
-  color: var(--cream);
+  color: var(--paper);
   border-radius: 4px;
   padding: clamp(2rem, 5vw, 3.5rem);
   position: relative;
@@ -337,13 +344,13 @@ section { padding: var(--gap-section) 0; }
   content: "";
   position: absolute;
   inset: 10px;
-  border: 1px solid rgba(251,243,236,0.22);
+  border: 1px solid rgba(var(--paper-rgb), 0.22);
   pointer-events: none;
 }
 .menu-card .section-head h2,
-.menu-card .eyebrow { color: var(--cream); }
+.menu-card .eyebrow { color: var(--paper); }
 .menu-card .eyebrow { color: var(--pink); }
-.menu-card .section-head p { color: rgba(251,243,236,0.72); }
+.menu-card .section-head p { color: rgba(var(--paper-rgb), 0.72); }
 
 .menu-columns {
   display: grid;
@@ -352,7 +359,7 @@ section { padding: var(--gap-section) 0; }
   margin-top: 1.5rem;
 }
 .menu-col:last-child {
-  border-left: 1px solid rgba(251,243,236,0.16);
+  border-left: 1px solid rgba(var(--paper-rgb), 0.16);
   padding-left: 3rem;
 }
 .menu-col-head {
@@ -363,7 +370,7 @@ section { padding: var(--gap-section) 0; }
   color: var(--pink);
   margin: 0 0 0.3rem;
   padding-bottom: 0.9rem;
-  border-bottom: 1px solid rgba(251,243,236,0.3);
+  border-bottom: 1px solid rgba(var(--paper-rgb), 0.3);
 }
 .menu-list { display: grid; gap: 0; margin-top: 1rem; }
 .menu-item {
@@ -371,7 +378,7 @@ section { padding: var(--gap-section) 0; }
   grid-template-columns: 1fr auto;
   gap: 0.5rem 1.5rem;
   padding: 1.35rem 0;
-  border-top: 1px solid rgba(251,243,236,0.16);
+  border-top: 1px solid rgba(var(--paper-rgb), 0.16);
 }
 .menu-item:last-child { padding-bottom: 0; }
 .menu-item-name {
@@ -384,7 +391,7 @@ section { padding: var(--gap-section) 0; }
 .menu-item-notes {
   grid-column: 1 / -1;
   font-size: 0.92rem;
-  color: rgba(251,243,236,0.68);
+  color: rgba(var(--paper-rgb), 0.68);
   max-width: 60ch;
 }
 
@@ -419,7 +426,7 @@ section { padding: var(--gap-section) 0; }
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--cream);
+  color: var(--paper);
   background: var(--crimson);
   padding: 0.1rem 0.4rem;
   border-radius: 2px;
@@ -668,7 +675,7 @@ textarea { resize: vertical; min-height: 110px; }
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--pine-dark);
-  color: rgba(251,243,236,0.8);
+  color: rgba(var(--paper-rgb), 0.8);
   padding: 3.5rem 0 2rem;
 }
 .footer-top {
@@ -678,19 +685,19 @@ textarea { resize: vertical; min-height: 110px; }
   gap: 2rem;
   flex-wrap: wrap;
   padding-bottom: 2.4rem;
-  border-bottom: 1px solid rgba(251,243,236,0.14);
+  border-bottom: 1px solid rgba(var(--paper-rgb), 0.14);
   margin-bottom: 1.6rem;
 }
 .footer-word {
   font-family: var(--display);
   font-size: 1.6rem;
-  color: var(--cream);
+  color: var(--paper);
 }
 .footer-word span { color: var(--pink); }
 .footer-tag { font-size: 0.9rem; max-width: 30ch; margin-top: 0.5rem; }
 .footer-cols { display: flex; gap: 3.5rem; }
 .footer-col h4 {
-  color: var(--cream);
+  color: var(--paper);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -700,7 +707,7 @@ textarea { resize: vertical; min-height: 110px; }
 .footer-col a {
   display: block;
   text-decoration: none;
-  color: rgba(251,243,236,0.78);
+  color: rgba(var(--paper-rgb), 0.78);
   font-size: 0.9rem;
   margin-bottom: 0.55rem;
 }
@@ -709,7 +716,7 @@ textarea { resize: vertical; min-height: 110px; }
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: rgba(251,243,236,0.5);
+  color: rgba(var(--paper-rgb), 0.5);
   flex-wrap: wrap;
   gap: 0.6rem;
 }
@@ -748,7 +755,7 @@ textarea { resize: vertical; min-height: 110px; }
   .process-list { grid-template-columns: repeat(2, 1fr); }
   .process-item:nth-child(3) { border-left: none; }
   .menu-columns { grid-template-columns: 1fr; gap: 2rem; }
-  .menu-col:last-child { border-left: none; padding-left: 0; border-top: 1px solid rgba(251,243,236,0.16); padding-top: 2rem; }
+  .menu-col:last-child { border-left: none; padding-left: 0; border-top: 1px solid rgba(var(--paper-rgb), 0.16); padding-top: 2rem; }
   .packages-table { grid-template-columns: 1fr; border-top: 1px solid var(--pine); }
   .package-col { border-left: none; border-top: 1px solid var(--line); }
   .package-col:first-child { border-top: none; }

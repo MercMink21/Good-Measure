@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <title>Good Measure Discovery Call Checklist</title>
 <style>
   @font-face {
@@ -135,6 +136,17 @@
   @media (max-width: 560px) {
     .block-row { grid-template-columns: 40px 1fr; gap: 1rem; }
     .block-num { font-size: 1.2rem; }
+  }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: letter; margin: 0.6in; }
+    body { font-size: 12.5pt; }
+    .wrap { max-width: 100%; padding: 0; }
+    section.block { padding: 1rem 0; break-inside: avoid; }
+    .block-row { break-inside: avoid; }
+    ul.checks li { break-inside: avoid; }
+    .closer { break-inside: avoid; }
   }
 </style>
 

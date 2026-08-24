@@ -115,10 +115,17 @@ a { color: inherit; }
 .site-header .wrap {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: 1.3rem;
   padding-bottom: 1.3rem;
 }
+.wordmark-arc {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex: none;
+}
+.wordmark-arc svg { display: block; }
 
 .main-nav { display: flex; align-items: center; gap: 2.2rem; }
 .main-nav a {

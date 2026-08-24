@@ -46,6 +46,33 @@ if (heroRule && heroTagline) {
   }
 }
 
+// Signage ticker — oscillates back and forth just far enough to reveal
+// every image, timed so speed feels consistent regardless of how much
+// it needs to travel. Skipped entirely for prefers-reduced-motion.
+const signageTicker = document.getElementById('signageTicker');
+if (signageTicker) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wrap = signageTicker.parentElement;
+
+  const setupTicker = () => {
+    const overflow = signageTicker.scrollWidth - wrap.clientWidth;
+    if (reduceMotion || overflow <= 0) {
+      signageTicker.classList.remove('is-animating');
+      return;
+    }
+    const pxPerSecond = 45;
+    signageTicker.style.setProperty('--ticker-distance', `-${overflow}px`);
+    signageTicker.style.setProperty('--ticker-duration', `${overflow / pxPerSecond}s`);
+    signageTicker.classList.add('is-animating');
+  };
+
+  setupTicker();
+  window.addEventListener('resize', setupTicker);
+  signageTicker.querySelectorAll('img').forEach((img) => {
+    if (!img.complete) img.addEventListener('load', setupTicker, { once: true });
+  });
+}
+
 // Inquiry form — submits to Formspree once index.html's form action has a
 // real form ID; falls back to a demo message if it still says YOUR_FORM_ID.
 const form = document.getElementById('inquiryForm');

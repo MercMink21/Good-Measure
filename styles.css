@@ -695,18 +695,14 @@ textarea { resize: vertical; min-height: 110px; }
   border-bottom: 1px solid rgba(251,243,236,0.14);
   margin-bottom: 1.6rem;
 }
-.footer-word {
-  font-family: var(--display);
-  font-size: 1.6rem;
-  color: var(--cream);
-}
-.footer-word span { color: var(--pink); }
-.footer-tag { font-size: 0.9rem; max-width: 30ch; margin-top: 0.5rem; }
+.footer-top-mark { display: none; }
+.footer-tag { font-size: 0.9rem; max-width: 30ch; }
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   row-gap: 0.6rem;
 }
+.footer-links-row { display: contents; }
 .footer-links a {
   text-decoration: none;
   color: rgba(251,243,236,0.78);
@@ -719,16 +715,21 @@ textarea { resize: vertical; min-height: 110px; }
   color: rgba(251,243,236,0.35);
   margin: 0 0.75rem;
 }
+.footer-links-row-1 a:last-child::after {
+  content: "·";
+  color: rgba(251,243,236,0.35);
+  margin: 0 0.75rem;
+}
 .footer-bottom {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgba(251,243,236,0.5);
 }
-.footer-bottom span:first-child { justify-self: start; }
-.footer-bottom span:last-child { justify-self: end; }
+.footer-copyright { justify-self: start; }
+.footer-serving { justify-self: end; }
 .footer-mark { justify-self: center; height: 40px; width: auto; opacity: 0.8; }
 
 /* ---------- Reveal on scroll ---------- */
@@ -778,10 +779,22 @@ textarea { resize: vertical; min-height: 110px; }
 }
 
 @media (max-width: 560px) {
-  .footer-top { flex-direction: column; }
+  .footer-top { flex-direction: column; align-items: center; text-align: center; }
+  .footer-top-mark { display: block; height: 46px; width: auto; margin: 0 auto 0.9rem; }
+  .footer-links { flex-direction: column; align-items: center; gap: 0.7rem; }
+  .footer-links-row { display: flex; justify-content: center; flex-wrap: wrap; }
   .footer-links a:not(:last-child)::after { margin: 0 0.55rem; }
-  .footer-bottom { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 0.9rem; }
-  .footer-bottom span:first-child, .footer-bottom span:last-child { justify-self: center; }
+  .footer-links-row-1 a:last-child::after { content: none; }
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 0.9rem;
+    font-size: 0.8rem;
+  }
+  .footer-copyright { justify-self: center; order: 3; }
+  .footer-mark { order: 2; }
+  .footer-serving { justify-self: center; order: 1; }
   .signage-item { width: 220px; }
   .signage-item img { width: 220px; height: 264px; }
   .gallery-tile { width: 220px; height: 264px; }

@@ -288,36 +288,6 @@ section { padding: var(--gap-section) 0; }
   font-weight: 700;
 }
 
-/* ---------- Process: numbered rail, not feature cards ---------- */
-.process-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--pine);
-  border-bottom: 1px solid var(--pine);
-}
-.process-item {
-  padding: 2.1rem 1.7rem;
-  border-left: 1px solid var(--line);
-}
-.process-item:first-child { border-left: none; }
-.process-item .step-num {
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--crimson);
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-.process-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
-}
-.process-item p {
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  margin: 0;
-}
-
 /* ---------- Menu (literal menu-card object — intentional exception) ---------- */
 .menu-card {
   background: var(--pine);
@@ -380,6 +350,18 @@ section { padding: var(--gap-section) 0; }
   font-size: 0.92rem;
   color: rgba(251,243,236,0.68);
   max-width: 60ch;
+}
+.na-tag {
+  font-family: var(--body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pine);
+  background: var(--pink);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  white-space: nowrap;
 }
 
 /* ---------- Packages: rate card, not pricing-tier cards ---------- */
@@ -756,8 +738,6 @@ textarea { resize: vertical; min-height: 110px; }
   .badge-frame { width: min(280px, 100%); }
   .hero-tagline { white-space: normal; max-width: 34ch; }
   .about .wrap { grid-template-columns: 1fr; }
-  .process-list { grid-template-columns: repeat(2, 1fr); }
-  .process-item:nth-child(3) { border-left: none; }
   .menu-columns { grid-template-columns: 1fr; gap: 2rem; }
   .menu-col:last-child { border-left: none; padding-left: 0; border-top: 1px solid rgba(251,243,236,0.16); padding-top: 2rem; }
   .packages-table { grid-template-columns: 1fr; border-top: 1px solid var(--pine); }
@@ -780,9 +760,6 @@ textarea { resize: vertical; min-height: 110px; }
 }
 
 @media (max-width: 560px) {
-  .process-list { grid-template-columns: 1fr; }
-  .process-item { border-left: none; border-top: 1px solid var(--line); }
-  .process-item:first-child { border-top: none; }
   .footer-top { flex-direction: column; }
   .footer-cols { gap: 2.4rem; }
 }

@@ -46,17 +46,47 @@ if (heroRule && heroTagline) {
   }
 }
 
-// Inquiry form (demo — replace action with real endpoint, e.g. Formspree)
+// Inquiry form — submits to Formspree once index.html's form action has a
+// real form ID; falls back to a demo message if it still says YOUR_FORM_ID.
 const form = document.getElementById('inquiryForm');
 const status = document.getElementById('formStatus');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  const isConfigured = !form.action.includes('YOUR_FORM_ID');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     // Honeypot: real visitors never fill this hidden field, bots often do
     const honeypot = form.querySelector('#website');
     if (honeypot && honeypot.value) {
       return;
     }
-    status.textContent = 'Thanks — this is a demo form. Connect it to Formspree/Resend/your inbox to go live.';
+
+    if (!isConfigured) {
+      status.textContent = 'Thanks — this is a demo form. Connect it to Formspree/Resend/your inbox to go live.';
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    status.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (response.ok) {
+        status.textContent = "Thanks — we'll follow up within a day.";
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong — please email us directly at goodmeasurebarco@gmail.com.';
+      }
+    } catch (err) {
+      status.textContent = 'Something went wrong — please email us directly at goodmeasurebarco@gmail.com.';
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 }

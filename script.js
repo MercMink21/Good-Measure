@@ -46,32 +46,39 @@ if (heroRule && heroTagline) {
   }
 }
 
-// Signage ticker — oscillates back and forth just far enough to reveal
-// every image, timed so speed feels consistent regardless of how much
-// it needs to travel. Skipped entirely for prefers-reduced-motion.
-const signageTicker = document.getElementById('signageTicker');
-if (signageTicker) {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const wrap = signageTicker.parentElement;
+// Gallery & Signage tickers — continuous one-directional loop (two identical
+// tracks; the second picks up exactly where the first ends, so it reads as
+// an unbroken circle rather than a start-to-end-and-back oscillation).
+// Pauses on hover via CSS. Skipped entirely for prefers-reduced-motion.
+const tickerReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TICKER_PX_PER_SECOND = 65;
 
-  const setupTicker = () => {
-    const overflow = signageTicker.scrollWidth - wrap.clientWidth;
-    if (reduceMotion || overflow <= 0) {
-      signageTicker.classList.remove('is-animating');
+const setupTicker = (ticker) => {
+  const track = ticker.querySelector('.ticker-track');
+  const wrap = ticker.parentElement;
+  if (!track || !wrap) return;
+
+  const measure = () => {
+    const trackWidth = track.scrollWidth;
+    if (tickerReduceMotion || trackWidth <= wrap.clientWidth) {
+      ticker.classList.remove('is-animating');
       return;
     }
-    const pxPerSecond = 45;
-    signageTicker.style.setProperty('--ticker-distance', `-${overflow}px`);
-    signageTicker.style.setProperty('--ticker-duration', `${overflow / pxPerSecond}s`);
-    signageTicker.classList.add('is-animating');
+    ticker.style.setProperty('--ticker-duration', `${trackWidth / TICKER_PX_PER_SECOND}s`);
+    ticker.classList.add('is-animating');
   };
 
-  setupTicker();
-  window.addEventListener('resize', setupTicker);
-  signageTicker.querySelectorAll('img').forEach((img) => {
-    if (!img.complete) img.addEventListener('load', setupTicker, { once: true });
+  measure();
+  window.addEventListener('resize', measure);
+  ticker.querySelectorAll('img').forEach((img) => {
+    if (!img.complete) img.addEventListener('load', measure, { once: true });
   });
-}
+};
+
+['galleryTicker', 'signageTicker'].forEach((id) => {
+  const ticker = document.getElementById(id);
+  if (ticker) setupTicker(ticker);
+});
 
 // Inquiry form — submits to Formspree once index.html's form action has a
 // real form ID; falls back to a demo message if it still says YOUR_FORM_ID.

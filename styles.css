@@ -385,7 +385,7 @@ section { padding: var(--gap-section) 0; }
 /* ---------- Packages: rate card, not pricing-tier cards ---------- */
 .packages-table {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--pine);
 }
 .package-col {
@@ -426,6 +426,12 @@ section { padding: var(--gap-section) 0; }
   color: var(--pine);
   margin-bottom: 1.4rem;
 }
+.package-price span {
+  font-size: 1rem;
+  font-family: var(--body);
+  font-weight: 600;
+  opacity: 0.7;
+}
 .package-col ul {
   list-style: none;
   padding: 0;
@@ -456,6 +462,17 @@ section { padding: var(--gap-section) 0; }
 }
 .package-included h3 { font-size: 1rem; margin-bottom: 0.6rem; }
 .package-included p { color: var(--ink-soft); font-size: 0.94rem; margin: 0; }
+.package-included ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+}
+.package-included ul li { display: flex; gap: 0.55rem; }
+.package-included ul li::before { content: "—"; color: var(--crimson); flex: none; }
 
 /* ---------- Gallery ---------- */
 .gallery-grid {

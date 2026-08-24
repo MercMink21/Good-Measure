@@ -115,19 +115,10 @@ a { color: inherit; }
 .site-header .wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 1.3rem;
   padding-bottom: 1.3rem;
 }
-.wordmark {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: var(--pine);
-  text-decoration: none;
-  letter-spacing: 0.01em;
-}
-.wordmark span { color: var(--crimson); }
 
 .main-nav { display: flex; align-items: center; gap: 2.2rem; }
 .main-nav a {
@@ -427,12 +418,6 @@ section { padding: var(--gap-section) 0; }
 .package-col li { display: flex; gap: 0.55rem; }
 .package-col li::before { content: "—"; color: var(--crimson); flex: none; }
 .package-col .btn { justify-content: center; margin-top: auto; }
-.packages-note {
-  margin-top: 2rem;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  text-align: center;
-}
 
 .package-included {
   margin-top: 3rem;
@@ -476,37 +461,6 @@ section { padding: var(--gap-section) 0; }
   font-style: italic;
   font-size: 0.82rem;
   padding: 0.9rem;
-}
-
-/* ---------- Testimonials: pull quotes, not sticky-note cards ---------- */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--pine);
-}
-.testimonial {
-  padding: 2.2rem 2rem 0;
-  border-left: 1px solid var(--line);
-}
-.testimonial:first-child { border-left: none; }
-.testimonial p.quote {
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--ink);
-  font-size: 1.08rem;
-  line-height: 1.5;
-  margin: 0 0 1.2rem;
-}
-.testimonial .who {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--crimson);
-}
-.testimonial .what {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
 }
 
 /* ---------- Social ---------- */
@@ -745,9 +699,6 @@ textarea { resize: vertical; min-height: 110px; }
   .package-col:first-child { border-top: none; }
   .package-col.featured { border-top: 2px solid var(--crimson); }
   .package-included { grid-template-columns: 1fr; gap: 1.2rem; }
-  .testimonial-grid { grid-template-columns: 1fr; border-top: 1px solid var(--pine); }
-  .testimonial { border-left: none; border-top: 1px solid var(--line); padding-top: 2rem; }
-  .testimonial:first-child { border-top: none; }
   .social-list { grid-template-columns: 1fr; }
   .social-item { border-left: none; border-top: 1px solid var(--line); }
   .social-item:first-child { border-top: none; }

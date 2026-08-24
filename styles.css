@@ -728,8 +728,8 @@ textarea { resize: vertical; min-height: 110px; }
   font-size: 1rem;
   color: rgba(251,243,236,0.5);
 }
-.footer-copyright { justify-self: start; }
-.footer-serving { justify-self: end; }
+.footer-copyright { grid-column: 1; justify-self: start; }
+.footer-serving { grid-column: 3; justify-self: end; }
 .footer-mark { display: none; }
 
 /* ---------- Reveal on scroll ---------- */

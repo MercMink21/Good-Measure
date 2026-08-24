@@ -467,6 +467,8 @@ section { padding: var(--gap-section) 0; }
   flex: none;
   width: max-content;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .ticker.is-animating .ticker-track {
   animation: ticker-loop var(--ticker-duration, 24s) linear infinite;
@@ -521,8 +523,8 @@ section { padding: var(--gap-section) 0; }
 }
 
 @keyframes ticker-loop {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  from { transform: translateX(0) translateZ(0); }
+  to { transform: translateX(-100%) translateZ(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   .ticker.is-animating .ticker-track { animation: none; }

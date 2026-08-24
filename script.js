@@ -53,13 +53,24 @@ if (heroRule && heroTagline) {
 const tickerReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const TICKER_PX_PER_SECOND = 65;
 
+const debounce = (fn, delay) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+};
+
 const setupTicker = (ticker) => {
   const track = ticker.querySelector('.ticker-track');
   const wrap = ticker.parentElement;
   if (!track || !wrap) return;
 
+  // getBoundingClientRect gives a sub-pixel-accurate width; scrollWidth
+  // rounds to the nearest integer, which can leave a 1px seam/stutter at
+  // the loop point since the animation travels exactly -100% of the track.
   const measure = () => {
-    const trackWidth = track.scrollWidth;
+    const trackWidth = track.getBoundingClientRect().width;
     if (tickerReduceMotion || trackWidth <= wrap.clientWidth) {
       ticker.classList.remove('is-animating');
       return;
@@ -69,7 +80,7 @@ const setupTicker = (ticker) => {
   };
 
   measure();
-  window.addEventListener('resize', measure);
+  window.addEventListener('resize', debounce(measure, 150));
   ticker.querySelectorAll('img').forEach((img) => {
     if (!img.complete) img.addEventListener('load', measure, { once: true });
   });

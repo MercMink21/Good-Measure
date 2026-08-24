@@ -702,23 +702,23 @@ textarea { resize: vertical; min-height: 110px; }
 }
 .footer-word span { color: var(--pink); }
 .footer-tag { font-size: 0.9rem; max-width: 30ch; margin-top: 0.5rem; }
-.footer-cols { display: flex; gap: 3.5rem; }
-.footer-col h4 {
-  color: var(--cream);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-family: var(--body);
-  margin-bottom: 0.9rem;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.6rem;
 }
-.footer-col a {
-  display: block;
+.footer-links a {
   text-decoration: none;
   color: rgba(251,243,236,0.78);
   font-size: 0.9rem;
-  margin-bottom: 0.55rem;
+  white-space: nowrap;
 }
-.footer-col a:hover { color: var(--pink); }
+.footer-links a:hover { color: var(--pink); }
+.footer-links a:not(:last-child)::after {
+  content: "·";
+  color: rgba(251,243,236,0.35);
+  margin: 0 0.75rem;
+}
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -776,7 +776,7 @@ textarea { resize: vertical; min-height: 110px; }
 
 @media (max-width: 560px) {
   .footer-top { flex-direction: column; }
-  .footer-cols { gap: 2.4rem; }
+  .footer-links a:not(:last-child)::after { margin: 0 0.55rem; }
   .signage-item { width: 220px; }
   .signage-item img { width: 220px; height: 264px; }
   .gallery-tile { width: 220px; height: 264px; }

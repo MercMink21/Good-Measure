@@ -22,9 +22,9 @@ Link in bio to check your date.
 
 Pricing built for small guest lists, not banquet halls.
 
-Intimate Gathering — $350, 15 guests or fewer, one custom signature drink made all night
+Intimate Gathering — $350, 15 guests or fewer, a custom signature drink designed with you
 Small Parties — $600, up to 30 guests, two signature drinks
-Bartending Only — $75/hr, you supply everything, we bring the pour
+Bartending Only — $60/hr, 3-hour minimum, you supply everything, we bring the pour
 
 You supply the alcohol — every package includes full bar setup and clean-up. Extra cocktails, extra hours, and custom signage all available as add-ons.
 
@@ -72,4 +72,30 @@ Whether it's one guest or the whole party going dry, we've got a drink for it.
 
 ---
 
-**Suggested posting order:** 1 → 4 → 2 → 3 → 5, spaced a few days apart, so the intro lands first and pricing doesn't front-load the whole feed.
+---
+
+## Post 6 — post6.png (Custom signage add-on)
+
+A welcome sign at the door. A printed bar menu. A name in lights for the guest of honor.
+
+Custom event signage is one of our most requested add-ons, from $20 — and it's completely customizable, not limited to Good Measure branding. Send us your colors, theme, or inspiration and we'll build it from scratch, made to match your event.
+
+Swipe through our site for real examples, or DM us your vision.
+
+#eventsignage #weddingsignage #bridalshower #engagementparty #coloradospringsevents #customsigns
+
+---
+
+## Post 7 — post7.png (Signature drink: Midnight Rain)
+
+Meet Midnight Rain — prosecco, berry purée, simple syrup, soda water, basil leaves.
+
+Part of our signature menu, and yes — it can be made N/A. Tell us your flavor profile and we'll build a drink around it. You bring the spirits, we bring the rest.
+
+Save this for your next event.
+
+#signaturecocktail #craftcocktails #proseccococktail #coloradospringsbartender #mixology #privatebartending
+
+---
+
+**Suggested posting order:** 1 → 4 → 2 → 3 → 6 → 7 → 5, spaced a few days apart, so the intro lands first, pricing doesn't front-load the whole feed, and the two drink/signage spotlights break things up.

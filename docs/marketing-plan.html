@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Good Measure Marketing Plan</title>
+<style>
+  :root {
+    --cream: #FBF3EC;
+    --cream-deep: #F4E4D8;
+    --pink: #EFC9C8;
+    --pink-soft: #F5DCDB;
+    --crimson: #E51A3C;
+    --crimson-dark: #B3142F;
+    --pine: #1C512F;
+    --pine-dark: #12351F;
+    --ink: #241512;
+    --ink-soft: #5B4A45;
+    --line: rgba(36,21,18,0.14);
+    --display: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    --body: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--cream); color:var(--ink); font-family:var(--body); line-height:1.6; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  h1,h2,h3 { font-family: var(--display); color: var(--pine); margin:0; }
+  h1 { font-size: clamp(2rem,5vw,2.6rem); letter-spacing:-0.01em; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.1rem; }
+  .kicker { font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--crimson); display:block; margin-bottom:0.6rem; }
+  .lede { color: var(--ink-soft); font-size:1.05rem; max-width:66ch; margin-top:1rem; }
+  section { margin-top: 3.4rem; }
+  .section-head { margin-bottom: 1.4rem; }
+  .section-head p { color: var(--ink-soft); margin-top: 0.5rem; max-width: 68ch; }
+
+  .pillars { display:grid; grid-template-columns: repeat(2,1fr); gap:1.2rem; margin-top:1.4rem; }
+  .pillar { border:1px solid var(--pine); border-radius:0; padding:1.3rem 1.4rem; }
+  .pillar h3 { font-size:1rem; margin-bottom:0.5rem; }
+  .pillar p { color:var(--ink-soft); font-size:0.92rem; margin:0; }
+
+  table { width:100%; border-collapse:collapse; margin-top:1.2rem; font-size:0.92rem; }
+  th,td { text-align:left; padding:0.7rem 0.6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; }
+  td.phase { font-weight:700; color:var(--pine); white-space:nowrap; }
+
+  ul.checklist { list-style:none; padding:0; margin:1.1rem 0 0; display:grid; gap:0.55rem; }
+  ul.checklist li { display:flex; gap:0.6rem; font-size:0.94rem; }
+  ul.checklist li::before { content:"—"; color:var(--crimson); flex:none; }
+
+  .channel-card { border-top:1px solid var(--line); padding:1.6rem 0; }
+  .channel-card:first-child { border-top:none; padding-top:0; }
+  .channel-head { display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.6rem; }
+  .channel-num { font-family:var(--display); font-style:italic; color:var(--crimson); font-size:1.1rem; }
+  .channel-head h3 { font-size:1.15rem; }
+  .channel-card p { color:var(--ink-soft); margin:0 0 0.8rem; max-width:68ch; }
+
+  .metric-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1.2rem; }
+  .metric { border:1px solid var(--line); border-radius:0; padding:1rem; text-align:center; }
+  .metric .num { font-family:var(--display); font-size:1.1rem; color:var(--pine); }
+  .metric .label { font-size:0.78rem; color:var(--ink-soft); margin-top:0.3rem; }
+
+  .note { font-size:0.85rem; color:var(--ink-soft); border-left:2px solid var(--crimson); padding:0.2rem 0 0.2rem 1rem; margin-top:1.2rem; }
+  footer.doc-footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); font-size:0.8rem; color:var(--ink-soft); }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: letter; margin: 0; }
+    body {
+      font-size: 12pt;
+      padding: 0.7in 0.75in;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .wrap { max-width: 100%; padding: 0; }
+    section { margin-top: 2.2rem; }
+    .section-head { break-after: avoid; }
+    .channel-card { break-inside: avoid; }
+    .pillar { break-inside: avoid; }
+    tr { break-inside: avoid; }
+    table { font-size: 10.5pt; }
+  }
+
+  @media (max-width:640px) {
+    .pillars { grid-template-columns:1fr; }
+    .metric-grid { grid-template-columns:repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <span class="kicker">Marketing Plan</span>
+  <h1>Good Measure — Getting From Live Site to Booked Calendar</h1>
+  <p class="lede">A launch-and-grow plan built around what's actually true about the business right now: two packages (Intimate Gathering, Small Parties), BYOB, a 30-mile radius around Colorado Springs, and Instagram as the one social channel. Nothing here assumes a budget or team you don't have.</p>
+
+  <section>
+    <div class="section-head">
+      <span class="kicker">Positioning</span>
+      <h2>What makes Good Measure different, said plainly</h2>
+      <p>Most private bartending in this market is priced and staffed for weddings. Good Measure is built for the room that stays small on purpose — and that's the pitch, not an apology.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Small by design</h3>
+        <p>15-guest dinner parties and engagement/shower-sized events get the same craft and setup as a 150-person wedding, at a scale and price that fits them.</p>
+      </div>
+      <div class="pillar">
+        <h3>BYOB, without the awkwardness</h3>
+        <p>Clients keep control of their alcohol budget and brand preferences; Good Measure handles everything else — the part people don't want to think about.</p>
+      </div>
+      <div class="pillar">
+        <h3>Zero-proof as a real menu, not an asterisk</h3>
+        <p>Most competitors treat mocktails as an afterthought. A full, matching zero-proof program is a genuine differentiator for mixed-dry and sober-curious guest lists.</p>
+      </div>
+      <div class="pillar">
+        <h3>A custom drink, not a fixed menu</h3>
+        <p>Every package is built around a drink designed with the host — the pitch is "your own recipe," not "pick from our list."</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="kicker">Who You're Talking To</span>
+      <h2>Four segments, all within ~30 miles of 80920</h2>
+    </div>
+    <ul class="checklist">
+      <li><strong>Dinner-party hosts</strong> — small get-togethers, 15 guests or fewer, want one great drink done right</li>
+      <li><strong>Engagement &amp; shower hosts</strong> — want the event to feel special without full-wedding cost or scale</li>
+      <li><strong>Mixed-dry gatherings</strong> — hosts who need a real mocktail program, not a lone virgin option</li>
+      <li><strong>Referral-driven repeat hosts</strong> — past guests who host their own small events later and remember the bar</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="kicker">Channels</span>
+      <h2>Where the effort actually goes</h2>
+      <p>Ranked by expected return for a one-person, pre-revenue-marketing-budget business. Instagram is the hub; everything else feeds it or feeds off it.</p>
+    </div>
+
+    <div class="channel-card">
+      <div class="channel-head"><span class="channel-num">01</span><h3>Instagram</h3></div>
+      <p>The only social channel right now (@goodmeasurebar) — so it has to carry both discovery and proof-of-work. Reels get found by strangers; feed posts and highlights convert people who already found you.</p>
+      <ul class="checklist">
+        <li>Content pillars: behind-the-bar process reels, the signature-drink reveal for each event, event recaps, quick "ask a bartender" Q&amp;A in Stories</li>
+        <li>Post 3–4x/week in-season (spring through early fall + holiday season), 1–2x/week off-season</li>
+        <li>Geotag Colorado Springs plus Monument, Woodland Park, Fountain, Black Forest to cover the full 30-mile radius</li>
+        <li>Bio and pinned post lead with the two real differentiators: BYOB and a full zero-proof menu</li>
+        <li>Every booked event ends with a request: a Story repost from the host, or permission to post recap photos</li>
+      </ul>
+    </div>
+
+    <div class="channel-card">
+      <div class="channel-head"><span class="channel-num">02</span><h3>Google Business Profile</h3></div>
+      <p>Free, and it's how people search "private bartender near me" or "bartending service Colorado Springs" instead of scrolling Instagram. Set once, then just feed it reviews.</p>
+      <ul class="checklist">
+        <li>Category: Bartending Service; service area set to the 30-mile radius, not a storefront address</li>
+        <li>Add the logo, 5–10 real event photos once available, and a link straight to the Inquiry section</li>
+        <li>Ask every client for a Google review within a few days of the event — this is the single highest-leverage local SEO action available</li>
+      </ul>
+    </div>
+
+    <div class="channel-card">
+      <div class="channel-head"><span class="channel-num">03</span><h3>Local vendor &amp; referral network</h3></div>
+      <p>Event planners, photographers, florists, and small venue/rental spaces in the same niche (small, non-wedding-scale events) see the exact clients Good Measure wants, before those clients start searching themselves.</p>
+      <ul class="checklist">
+        <li>Direct outreach to 5–10 local planners/photographers with a one-page intro and the Instagram link</li>
+        <li>Simple referral credit (e.g. $25–50 off, or a free add-on) for any booking that names a referrer — vendor or past client</li>
+        <li>Post in 2–3 relevant local Facebook groups (Colorado Springs moms/parenting groups, local events groups) when a booking-friendly moment fits — not cold self-promotion</li>
+      </ul>
+    </div>
+
+    <div class="channel-card">
+      <div class="channel-head"><span class="channel-num">04</span><h3>Paid social (later, small)</h3></div>
+      <p>Worth testing only after organic content and the Google listing are running — paid spend works better once there's real proof (photos, reviews) to show.</p>
+      <ul class="checklist">
+        <li>Small geo-targeted Instagram/Meta test ($100–200) once real event photography exists</li>
+        <li>Target by interest (event planning, home entertaining, engagement) and location (80920 + surrounding zips), not broad demographics</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="kicker">Launch Sequence</span>
+      <h2>First 90 days</h2>
+    </div>
+    <table>
+      <thead><tr><th>Window</th><th>Focus</th><th>Concrete actions</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="phase">Days 1–14</td>
+          <td>Soft launch</td>
+          <td>Announce to personal network; book 2–3 discounted "founding client" events in exchange for real photos + a testimonial + a Google review. This is what unblocks the site's remaining placeholders.</td>
+        </tr>
+        <tr>
+          <td class="phase">Days 15–30</td>
+          <td>Foundation</td>
+          <td>Claim &amp; complete Google Business Profile. Start the Instagram content cadence. Reach out to 5 local vendors/planners. Wire the inquiry form to Formspree so leads actually land somewhere.</td>
+        </tr>
+        <tr>
+          <td class="phase">Days 31–60</td>
+          <td>Proof</td>
+          <td>Replace every placeholder on the site (gallery, testimonials, pricing) with real material from the founding events. Keep posting recaps. First referral-credit bookings should start showing up.</td>
+        </tr>
+        <tr>
+          <td class="phase">Days 61–90</td>
+          <td>Push</td>
+          <td>Review what actually drove inquiries (ask every new lead "how'd you hear about us") and put more effort there. Consider the first small paid-ad test if organic is converting well.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">The through-line: every one of the first handful of events is also a content and proof-gathering opportunity. Treat the founding-client discount as a marketing spend, not a discount.</div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="kicker">What to Watch</span>
+      <h2>Metrics worth tracking from day one</h2>
+    </div>
+    <div class="metric-grid">
+      <div class="metric"><div class="num">Inquiries</div><div class="label">Form submissions once Formspree is live</div></div>
+      <div class="metric"><div class="num">Source</div><div class="label">"How did you hear about us?" on every inquiry</div></div>
+      <div class="metric"><div class="num">Conversion</div><div class="label">Inquiries → booked events</div></div>
+      <div class="metric"><div class="num">Reviews</div><div class="label">Google review count &amp; rating</div></div>
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    Companion to the Good Measure landing page and brand plan — built around the real package structure (Intimate Gathering, Small Parties), BYOB model, and Colorado Springs service area.
+  </footer>
+</div>
+
+</body>
+</html>

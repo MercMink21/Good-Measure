@@ -167,8 +167,13 @@
 
   @media print {
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    @page { size: letter; margin: 0.6in; }
-    body { font-size: 12.5pt; }
+    @page { size: letter; margin: 0; }
+    body {
+      font-size: 12.5pt;
+      padding: 0.7in 0.75in;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
     .wrap { max-width: 100%; padding: 0; }
     section.block { padding: 1rem 0; break-inside: avoid; }
     .block-row { break-inside: avoid; }
